@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "AutoClick",
+  "description": "AutoClick",
+  "version": "1.0",
+
+  //"background": { "scripts": ["background.js"] },
+  //"web_accessible_resources": ["test.js"],//inject into page, and as a part of page
+  "permissions": ["tabs","http://10.225.72.11:15871/cgi-bin/*"],
+  //"permissions": ["tabs","http://news.baidu.com/*"],
+  "page_action": {
+          //"default_icon": {
+               //"19": "cnblogs_19.png",
+               //"38": "cnblogs_38.png"
+          //},
+          "default_title": "cnblogs.com article information"
+   },
+   "content_scripts": [
+    {
+      "matches": ["http://10.225.72.11:15871/cgi-bin/*"],
+      //"matches": ["http://news.baidu.com/*"],
+      //"css": ["mystyles.css"],
+      "js": ["jquery-1.9.1.min.js", "autoclick.js"]
+      //"run_at": "document_end"
+    }
+  ]
+}
